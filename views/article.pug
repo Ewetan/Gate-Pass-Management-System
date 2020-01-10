@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  .row.mt-4
+    .col-md-4
+      .card
+        .card-body.d-flex
+          #qrcode.m-auto
+    .col-md-8
+      .card
+        .card-body.text-center
+          h1= article.title
+          //- h5 Written by #{author}
+          p.text-bold Appointment Name: 
+            span.font-weight-bolder.bd-highlight #{article.fullName}
+          p Phone Number: 
+            span.font-weight-bolder #{article.number}
+          p Email Address: 
+            span.font-weight-bolder #{article.email}
+          p Appointment Date: 
+            span.font-weight-bolder #{article.appointmentDate}
+          p Appointment Time: 
+            span.font-weight-bolder #{article.appointmentTime} pm
+          p Occupation: 
+            span.font-weight-bolder #{article.occupation}
+
+          #form-group
+            input#theinput.form-control(name='email', type='text', value=article.email, hidden)
+       
+          if user
+            if user.id ==article.author
+              a.btn.btn-primary.btn-block.no-print(href='/articles/edit/'+article._id) Edit 
+              a.btn.btn-danger.delete-article.btn-block.no-print(href='#',data-id=article._id) Delete
+    

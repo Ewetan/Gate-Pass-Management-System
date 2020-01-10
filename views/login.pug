@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .row.justify-content-center
+    .col-md-6
+     .card.shadow-sm
+      .card-body
+        h1.text-center Login
+        hr
+        form(method='POST', action='/users/login')
+          #form-group.mb-2
+            label Username:
+            input.form-control(name='username',type='text')
+          #form-group
+            label Password:
+            input.form-control(name='password',type='password')
+          #form-group
+            hr  
+          input.btn.btn-primary.btn-block(type='submit',value='Submit')

@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  .row.justify-content-center
+    .col-md-8
+      .card
+        .card-body
+          h1.text-center #{title}
+          hr
+          form(method='POST', action='/articles/add')
+            .row
+              .col
+                label Full Name:
+                input.form-control(name='fullName', type='text')
+            .row.mt-2
+              .col
+                label Number
+                input.form-control(name="number")    
+              .col
+                label Email:
+                input.form-control(name='email', type='email')
+              .col
+                label Time:
+                input.form-control(type="date", name="appointmentDate")
+            .row.mt-2
+              .col
+                label Date:
+                input.form-control(type="time", name="appointmentTime")  
+              .col
+                label Meeting Room 
+                input.form-control(type="text", name="meetingRoom")  
+              .col
+                label Occupation
+                input.form-control(type="text", name="occupation")    
+              
+              
+            .row.mt-2
+              .col
+                lable Description
+                textarea.form-control(name="description")
+     
+            hr                    
+            input.btn.btn-block.btn-primary(type='submit',value='Submit')

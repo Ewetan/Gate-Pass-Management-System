@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title GatePass MgT Sys
+    link(rel='stylesheet' href='/bower_components/bootstrap/css/bootstrap.css')
+    link(rel='stylesheet' href='/css/style.css')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      a.navbar-brand(href='#') GatePass Management System
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse.d-flex
+          ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link(href='/') HOME
+            if user
+              li.nav-item
+                a.nav-link(href='/articles/add') ADD
+              li.nav-item
+                a.nav-link(href='/articles/scan') SCAN 
+          ul.nav.navbar-nav.navbar-right
+            if user
+              li.nav-item
+                a.nav-link(href='/users/logout') LOGOUT
+            else
+              li.nav-item
+                a.nav-link(href='/users/register') REGISTER
+              li.nav-item
+                a.nav-link(href='/users/login') LOGIN
+    .container.mt-4
+      != messages('message', locals)
+      if errors
+        each error, i in errors
+          div(class="alert alert-danger") #{error.msg}
+      block content
+      br
+      .container.fixed-bottom
+        //- hr
+        //- footer
+        //-   p Copyright &copy; 
+          //- var theDate=new Date() document.write(theDate.getFullYear())
+    script(src='/bower_components/jquery/dist/jquery.js')  
+    script(src='/bower_components/bootstrap/js/bootstrap.js')
+    script(src='/js/script.js')
+    script(src='/js/main.js')
+    script(src='/js/qrcode.js')

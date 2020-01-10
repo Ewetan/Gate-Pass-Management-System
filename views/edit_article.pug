@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .row.justify-content-center
+    .col-md-8
+      .card.shadow-sm
+        .card-body
+          h4 #{title}
+          hr
+          form(method='POST', action='/articles/edit/'+article._id)
+            #form-group
+              label Title:
+              input.form-control(name='title', type='text', value=article.fullName)
+            #form-group
+              label Email:
+              input.form-control(name='email', type='text', value=article.email)  
+            #form-group
+              label Date:
+              input.form-control(name='email', type='text', value=article.appointmentDate)
+            #form-group
+              label Time:
+              input.form-control(name='email', type='text', value=article.appointmentTimer)   
+
+            br
+            input.btn.btn-primary.btn-block(type='submit',value='Submit')

@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 Appointments
+  hr
+  ul.list-group.mt-2
+    each article, i in articles
+      li.list-group
+        a.list-group-item.list-group-item-action(href="/articles/"+article._id)= article.fullName
