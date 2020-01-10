@@ -1,6 +1,5 @@
-# Article Knowledgebase Application
+# Gate Pass Management System
 
-This is a knowledgebase app used in the "Node.js & Express From Scratch" Youtube series.
 
 ## Technologies
 * Node.js
@@ -10,11 +9,11 @@ This is a knowledgebase app used in the "Node.js & Express From Scratch" Youtube
 * Pug Templating
 * Passport.js Authentication
 * BCrypt Hashing
+* InstascanJs
+* QRcode
 
 ### Version
-2.0.0
-
-## Usage
+0.0.1
 
 
 ### Installation
